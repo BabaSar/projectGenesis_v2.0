@@ -25,3 +25,5 @@ EPG DateTime Seconds	- epgSecondsInput
 Randomize EPG DateTime Button	- randomizeEpgButton
 	
 Generate ADI Button	- generateButton
+
+Results textbox - resultsTextbox
