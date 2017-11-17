@@ -1,3 +1,18 @@
+//Flags set up relating to the offer type selection, such that they are turned true or false depending on selection.
+
+var archiveWorkflowFlag = false;
+var cutvWorkflowFlag = false;
+var ipprWorkflowFlag = false;
+var est3aSingleTitleWorkflowFlag = false;
+
+//function to set all flags to false. This is a quick way to set all to false again if there has been a change.
+var setAllOfferTypeFlagsToFalse = function(){
+    archiveWorkflowFlag = false;
+    cutvWorkflowFlag = false;
+    ipprWorkflowFlag = false;
+    est3aSingleTitleWorkflowFlag = false;
+};
+
 // A function to immediately get all input elements from the form
 
 var providerIdInput;
@@ -62,14 +77,14 @@ var getElements = function(){
 
 getElements();
 
-//A function to determine which offer type is selection
+//A function to determine which offer type is selected
 
 var determineWhichOfferTypeSelected = function(){
 
     var selected = offerDropDownInput.value;
 
     var epgRelevantInputs = [serviceKeyInput, epgYearInput, epgMonthInput, epgDayInput, epgHoursInput, epgMinutesInput,
-                                epgSecondsInput, randomizeEpgButton];
+        epgSecondsInput, randomizeEpgButton];
 
     if (selected === "CUTV"){
 
@@ -77,10 +92,27 @@ var determineWhichOfferTypeSelected = function(){
             epgRelevantInputs[i].disabled = false;
         }
 
+        //flag for CUTV workflow should be activated and all others set to false
+        setAllOfferTypeFlagsToFalse();
+        cutvWorkflowFlag = true;
+
     }else{
 
         for (var i=0; i < epgRelevantInputs.length; i++){
             epgRelevantInputs[i].disabled = true;
         }
+
+        if(selected === "Archive"){
+            setAllOfferTypeFlagsToFalse();
+            archiveWorkflowFlag = true;
+        }else if(selected ==="IPPR"){
+            setAllOfferTypeFlagsToFalse();
+            ipprWorkflowFlag = true;
+        }else if(selected === "EST 3A Single Title"){
+            setAllOfferTypeFlagsToFalse();
+            est3aSingleTitleWorkflowFlag = true;
+        }
     }
 };
+
+//DateTimeFormatter function
