@@ -208,7 +208,7 @@
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="offerDropDownInput"><strong>Offer Type</strong></label>
-                                    <select id="offerDropDownInput" class="form-control">
+                                    <select id="offerDropDownInput" class="form-control" onchange="determineWhichOfferTypeSelected()">
                                         <option selected>Choose...</option>
                                         <option id="archive_option">Archive</option>
                                         <option>CUTV</option>
@@ -334,7 +334,7 @@
                     <div class="col-sm-12 col-md-10 col-lg-10">
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-12">
-                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="6">Your ADI will be generated here...
+                                  <textarea class="form-control" id="resultsTextBox" rows="6">Your ADI will be generated here...
                                   </textarea>
                             </div>
                         </div>
