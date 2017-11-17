@@ -43,6 +43,7 @@ var getElements = function(){
     offerDurationInput = document.getElementById("offerDurationInput");
 
     offerDropDownInput = document.getElementById("offerDropDownInput");
+
     serviceKeyInput = document.getElementById("serviceKeyInput");
 
     epgYearInput = document.getElementById("epgYearInput");
@@ -61,3 +62,25 @@ var getElements = function(){
 
 getElements();
 
+//A function to determine which offer type is selection
+
+var determineWhichOfferTypeSelected = function(){
+
+    var selected = offerDropDownInput.value;
+
+    var epgRelevantInputs = [serviceKeyInput, epgYearInput, epgMonthInput, epgDayInput, epgHoursInput, epgMinutesInput,
+                                epgSecondsInput, randomizeEpgButton];
+
+    if (selected === "CUTV"){
+
+        for (var i=0; i < epgRelevantInputs.length; i++){
+            epgRelevantInputs[i].disabled = false;
+        }
+
+    }else{
+
+        for (var i=0; i < epgRelevantInputs.length; i++){
+            epgRelevantInputs[i].disabled = true;
+        }
+    }
+};
