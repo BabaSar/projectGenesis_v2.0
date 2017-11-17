@@ -83,6 +83,8 @@ var determineWhichOfferTypeSelected = function(){
 
     var selected = offerDropDownInput.value;
 
+    //An array of the epg related inputs to make it easy to loop through and disable/enable them depending on selection
+    //of the offer type. E.g if CUTV is selected, then loop through these and set disabled = false.
     var epgRelevantInputs = [serviceKeyInput, epgYearInput, epgMonthInput, epgDayInput, epgHoursInput, epgMinutesInput,
         epgSecondsInput, randomizeEpgButton];
 
@@ -115,4 +117,44 @@ var determineWhichOfferTypeSelected = function(){
     }
 };
 
-//DateTimeFormatter function
+//declare all variables to be used in the ADIs
+
+var providerId;
+var licenseYear;
+var licenseMonth;
+var licenseDay;
+var licenseDuration;
+
+var offerYear;
+var offerMonth;
+var offerDay;
+var offerDuration;
+
+var offerDropDown;
+
+var serviceKey;
+
+var epgYear;
+var epgMonth;
+var epgDay;
+var epgHours;
+var epgMinutes;
+var epgSeconds;
+
+var retrieveAllInputFieldValues = function(){
+    providerId = providerIdInput.value;
+    //and so on...
+}
+
+
+//GENERATE ADI BUTTON
+var generate = function(){
+    alert("The generate ADI button was clicked!");
+
+    //start collecting all the input field values and assign to variables
+    retrieveAllInputFieldValues();
+    alert(providerId);
+
+};
+
+generateButton.addEventListener("click", generate);
