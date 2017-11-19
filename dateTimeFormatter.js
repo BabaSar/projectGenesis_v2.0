@@ -1,3 +1,9 @@
+//Declare DateTime variables here such as for license, offer and epg. These will then be used globally in the ADI
+
+var licenseDatesObject;
+var offerDatesObject;
+var epgDateObject;
+
 //DateTimeFormatter function - this function should accept arguments, then return the datetime in the format required
 
 var DateTimeFormatter = function(year, month, date, periodInDays){
@@ -29,6 +35,7 @@ var DateTimeFormatter = function(year, month, date, periodInDays){
 
     return {start: startDateTimeISOString,
         end: endDateTimeISOString};
+    //This function returns an object
 
 };
 
@@ -56,6 +63,7 @@ var epgDateTimeFormatter = function(year, month, day, hour, minutes, seconds){
     return {
         epgDateTime: epgDateTimeISOString
     };
+    //this function returns an object
 };
 
 //A function to generate a random epgDateTime when the randomize button is clicked
@@ -77,7 +85,5 @@ function generateRandomEpgDateTime(){
 
     epgSecondsInput.value = Math.floor(Math.random()*60);
     //generates a random number between 0 and 60
-
-
 
 };
