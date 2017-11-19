@@ -230,6 +230,8 @@ var extClosingTag = function(){
     return '\t</Ext>\n';
 };
 
+//need to fix above and below, something not quite right with the dates being generated
+
 var offer3B = function(){
 
   var offer = '\t<Offer uriId="@ProviderId@/OAVT@UriId@"  internalVersionNum="0" providerVersionNum="0"  creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@">\n' +
@@ -282,7 +284,8 @@ var textAreaResultsGeneratorEst3bSingleTitle = function(){
         extPriceBundle3B() +
         extPurchaseOption3B() +
         extClosingTag() +
-        offer3B();
+        offer3B() +
+        'TO BE CONTINUED....';
 
     return result;
 };
