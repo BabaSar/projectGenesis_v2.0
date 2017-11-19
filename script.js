@@ -143,6 +143,26 @@ var epgSeconds;
 
 var retrieveAllInputFieldValues = function(){
     //do something here...
+    providerId = providerIdInput.value;
+    licenseYear = licenseYearInput.value;
+    licenseMonth = licenseMonthInput.value;
+    licenseDay = licenseDayInput.value;
+    licenseDuration = licenseDurationInput.value;
+
+    offerYear = offerYearInput.value;
+    offerMonth = offerMonthInput.value;
+    offerDay = offerMonthInput.value;
+    offerDuration = offerDurationInput.value;
+
+    offerDropDown = offerDropDownInput.value;
+    serviceKey = serviceKeyInput.value;
+
+    epgYear = epgYearInput.value;
+    epgMonth = epgMonthInput.value;
+    epgDay = epgDayInput.value;
+    epgHours = epgHoursInput.value;
+    epgMinutes = epgMinutesInput.value;
+    epgSeconds = epgSecondsInput.value;
 
 };
 
@@ -153,7 +173,6 @@ var generate = function(){
 
     //start collecting all the input field values and assign to variables
     retrieveAllInputFieldValues();
-    alert(providerId);
 
 };
 
