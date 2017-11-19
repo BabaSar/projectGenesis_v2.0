@@ -119,9 +119,9 @@ var determineWhichOfferTypeSelected = function(){
 
 //declare all variables to be used in the ADIs
 
-var providerId;
-var licenseYear;
-var licenseMonth;
+var providerId = "";
+var licenseYear = "";
+var licenseMonth = "";
 var licenseDay;
 var licenseDuration;
 
@@ -142,9 +142,9 @@ var epgMinutes;
 var epgSeconds;
 
 var retrieveAllInputFieldValues = function(){
-    providerId = providerIdInput.value;
-    //and so on...
-}
+    //do something here...
+
+};
 
 
 //GENERATE ADI BUTTON
