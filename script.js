@@ -183,8 +183,19 @@ var generate = function(){
 
     offerDatesObject = dateTimeFormatter(offerYear, offerMonth, offerDay, offerDuration);
 
-    //set up the epg date object using epgDateTimeFormatter()
-    epgDateObject = epgDateTimeFormatter(epgYear, epgMonth, epgDay, epgHours, epgMinutes, epgSeconds);
+    if (archiveWorkflowFlag === true){
+        resultsTextBox.value = "archive workflow called!";
+    }else if (cutvWorkflowFlag === true){
+        //set up the epg date object using epgDateTimeFormatter(). This should only happen if user selected CUTV
+        epgDateObject = epgDateTimeFormatter(epgYear, epgMonth, epgDay, epgHours, epgMinutes, epgSeconds);
+
+        resultsTextBox.value = "CUTV workflow called!";
+    }else if (ipprWorkflowFlag === true){
+        resultsTextBox.value = "IPPR workflow called!";
+    }else if (est3aSingleTitleWorkflowFlag === true){
+        resultsTextBox.value = "EST 3A Single Title workflow called!";
+    }
+
 };
 
 //This is from dateTimeFormatter.js
