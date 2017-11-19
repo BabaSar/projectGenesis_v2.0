@@ -40,10 +40,11 @@ var epgSecondsInput;
 var randomizeEpgButton;
 
 var generateButton;
+generateButton = document.getElementById("generateButton");
 
 var resultsTextBox;
 
-var getElements = function(){
+(function(){
 
     providerIdInput = document.getElementById("providerIdInput");
 
@@ -73,14 +74,13 @@ var getElements = function(){
 
     resultsTextBox = document.getElementById("resultsTextBox");
 
-};
-
-getElements();
+})(); //This is an IIFE to get all field elements straight away.
 
 //A function to determine which offer type is selected
 
 var determineWhichOfferTypeSelected = function(){
 
+    var offerDropDownInput = document.getElementById("offerDropDownInput");
     var selected = offerDropDownInput.value;
 
     //An array of the epg related inputs to make it easy to loop through and disable/enable them depending on selection
@@ -144,6 +144,7 @@ var epgSeconds;
 var retrieveAllInputFieldValues = function(){
     //do something here...
     providerId = providerIdInput.value;
+
     licenseYear = licenseYearInput.value;
     licenseMonth = licenseMonthInput.value;
     licenseDay = licenseDayInput.value;
