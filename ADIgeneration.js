@@ -24,6 +24,10 @@ var digitGenerator = function(){
 // --------- TEXT PROCESSER FUNCTION BELOW ------- //
 
 var textProcessor = function(string){
+
+    //Every single ADI chunk that is created it sent to this textProcessor function, it will then do search and replace for
+    //all the criteria you see in this function.
+
     var string1 = string.replace(/@ProviderId@/g, providerId);
     var string2 = string1.replace(/@UriId@/g, uriId);
     var string3 = string2.replace(/@UriIdLastHalf@/g, uriIdLastHalf);
