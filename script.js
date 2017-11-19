@@ -4,6 +4,7 @@ var archiveWorkflowFlag = false;
 var cutvWorkflowFlag = false;
 var ipprWorkflowFlag = false;
 var est3aSingleTitleWorkflowFlag = false;
+var est3bSingleTitleWorkflowFlag = false;
 var noOfferTypeChosenYetFlag = false;
 
 //function to set all flags to false. This is a quick way to set all to false again if there has been a change.
@@ -12,6 +13,7 @@ var setAllOfferTypeFlagsToFalse = function(){
     cutvWorkflowFlag = false;
     ipprWorkflowFlag = false;
     est3aSingleTitleWorkflowFlag = false;
+    est3bSingleTitleWorkflowFlag = false;
     noOfferTypeChosenYetFlag = false;
 };
 
@@ -115,6 +117,9 @@ var determineWhichOfferTypeSelected = function(){
         }else if(selected === "EST 3A Single Title"){
             setAllOfferTypeFlagsToFalse();
             est3aSingleTitleWorkflowFlag = true;
+        }else if(selected === "EST 3B Single Title"){
+            setAllOfferTypeFlagsToFalse();
+            est3bSingleTitleWorkflowFlag = true;
         }else if(selected === "Choose..."){
             setAllOfferTypeFlagsToFalse();
             noOfferTypeChosenYetFlag = true;
@@ -212,6 +217,11 @@ var generate = function(){
     }else if (est3aSingleTitleWorkflowFlag === true){
         yourAdiWillBeGeneratedNowAlert();
         resultsTextBox.value = textAreaResultsGeneratorEst3aSingleTitle()
+
+    }else if (est3bSingleTitleWorkflowFlag === true){
+        yourAdiWillBeGeneratedNowAlert();
+        alert("Looks like you want a 3b est single title asset?");
+        //create a textAreaGenerator for est 3b single title
 
     }else if (noOfferTypeChosenYetFlag === true){
         alert("Please choose an offer type!");
