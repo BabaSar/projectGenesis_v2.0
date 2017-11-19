@@ -13,7 +13,7 @@ var setAllOfferTypeFlagsToFalse = function(){
     est3aSingleTitleWorkflowFlag = false;
 };
 
-// A function to immediately get all input elements from the form
+// A function to immediately get all input elements from the form - but first to declare the input field variables
 
 var providerIdInput;
 
