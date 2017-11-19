@@ -177,9 +177,19 @@ var generate = function(){
     //start collecting all the input field values and assign to variables
     retrieveAllInputFieldValues();
 
-    //now set up all the dates using the dateTimeFormatter functions
+    //now set up license dates object using dateTimeFormatter()
+    licenseDatesObject = dateTimeFormatter(licenseYear, licenseMonth, licenseDay, licenseDuration);
 
 
+    offerDatesObject = dateTimeFormatter(offerYear, offerMonth, offerDay, offerDuration);
+
+    //set up the epg date object using epgDateTimeFormatter()
+    epgDateObject = epgDateTimeFormatter(epgYear, epgMonth, epgDay, epgHours, epgMinutes, epgSeconds);
 };
+
+//This is from dateTimeFormatter.js
+// var licenseDatesObject;
+// var offerDatesObject;
+// var epgDateObject;
 
 generateButton.addEventListener("click", generate);

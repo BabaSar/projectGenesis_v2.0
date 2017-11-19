@@ -4,9 +4,9 @@ var licenseDatesObject;
 var offerDatesObject;
 var epgDateObject;
 
-//DateTimeFormatter function - this function should accept arguments, then return the datetime in the format required
+//dateTimeFormatter function - this function should accept arguments, then return the datetime in the format required
 
-var DateTimeFormatter = function(year, month, date, periodInDays){
+var dateTimeFormatter = function(year, month, date, periodInDays){
     var startDateTime;
     var endDateTime;
 
