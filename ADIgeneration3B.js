@@ -24,7 +24,7 @@ var headerGenerator3B = function(){
 // var string12 = string11.replace(/@uriId3@/g, uriId3);
 
 var titleGenerator3B = function(){
-    var title = '<Title uriId="@ProviderId@/TITL@uriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+    var title = '\t<Title uriId="@ProviderId@/TITL@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
         '\t\t<core:AlternateId identifierSystem="ConversationID">51413591</core:AlternateId>\n' +
         '\t\t<core:Ext>\n' +
         '\t\t<ext:LocalizableTitleExt xml:lang="eng">\n' +
@@ -35,8 +35,8 @@ var titleGenerator3B = function(){
         '\t\t\t<ext:IsAudioDescribed>true</ext:IsAudioDescribed>\n' +
         '\t\t\t<ext:Soundmouse>566444</ext:Soundmouse>\n' +
         '\t\t\t<ext:StudioCode>66</ext:StudioCode>\n' +
-        '\t\t\t<ext:LinkedObject object="PRCT@uriId@" type="parentContent"/>\n' +
-        '\t\t\t<ext:LinkedObject object="MULT@uriId@" type="MultiFormat"/>\n' +
+        '\t\t\t<ext:LinkedObject object="PRCT@UriId@" type="parentContent"/>\n' +
+        '\t\t\t<ext:LinkedObject object="MULT@UriId@" type="MultiFormat"/>\n' +
         '\t\t\t<ext:TitleExtensions Language="eng">\n' +
         '\t\t\t\t<ext:ProgramKey>PV1520064</ext:ProgramKey>\n' +
         '\t\t\t\t<ext:LinkedProgramKey>PV1520058</ext:LinkedProgramKey>\n' +
@@ -68,7 +68,7 @@ var titleGenerator3B = function(){
         '\t\t<title:Year>1995</title:Year>\n' +
         '\t\t<title:Genre>6:1</title:Genre>\n' +
         '\t\t<title:ShowType>private:H</title:ShowType>\n' +
-        '\t</Title>';
+        '\t</Title>\n';
 
     var processed = textProcessor(title);
     return processed;
@@ -76,7 +76,7 @@ var titleGenerator3B = function(){
 
 var movieGenerator3B = function(){
 
-    var movie = '<Movie uriId="@ProviderId@/MAIN@uriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+    var movie = '\t<Movie uriId="@ProviderId@/MAIN@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
         '\t\t<core:Ext>\n' +
         '\t\t\t<ext:MovieExtensions analogueOff="true" mediaId="M1035909" waterMarkingRequired="false"/>\n' +
         '\t\t</core:Ext>\n' +
@@ -97,7 +97,7 @@ var movieGenerator3B = function(){
         '\t\t\t<content:ConstrainedImageTrigger>0</content:ConstrainedImageTrigger>\n' +
         '\t\t\t<content:CGMS_A>3</content:CGMS_A>\n' +
         '\t\t</content:CopyControlInfo>\n' +
-        '\t\t</Movie>';
+        '\t</Movie>\n';
 
         var processed = textProcessor(movie);
         return processed;
