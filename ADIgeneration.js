@@ -36,7 +36,7 @@ var textProcessor = function(string){
     var string6 = string5.replace(/@licenseEnd@/g, licenseDatesObject.end);
     var string7 = string6.replace(/@offerStart@/g, offerDatesObject.start);
     var string8 = string7.replace(/@offerEnd@/g, offerDatesObject.end);
-    var string9 = string8.replace(/@epgDateTime@/g, epgDateObject.dateTime);
+    var string9 = string8.replace(/@epgDateTime@/g, epgDateObject.epgDateTime);
     var string10 = string9.replace(/@cutvServiceKey@/g, serviceKey);
 
     //the '/g' option means look for global occurences and replace each occurence. If this was omitted, then it would only replace the first occurence.
