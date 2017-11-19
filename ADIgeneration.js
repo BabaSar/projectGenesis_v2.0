@@ -341,9 +341,6 @@ var textAreaResultsGeneratorArchive = function(){
 
 var textAreaResultsGeneratorCutv = function(){
 
-    //alert("Hello from the CUTV workflow i.e textAreaResultsGeneratorCutv function!");
-    //alert("The service key you inputted is: " + serviceKey);
-
     var result = headerGenerator() +
         contentGroupGenerator() +
         titleGenerator() +

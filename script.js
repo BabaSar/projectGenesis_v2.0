@@ -189,7 +189,7 @@ var generate = function(){
     licenseDatesObject = dateTimeFormatter(licenseYear, licenseMonth, licenseDay, licenseDuration);
     offerDatesObject = dateTimeFormatter(offerYear, offerMonth, offerDay, offerDuration);
     epgDateObject = epgDateTimeFormatter(epgYear, epgMonth, epgDay, epgHours, epgMinutes, epgSeconds);
-
+    console.log(epgDateObject); //the epg date time does in fact get generated here and shows on the console
 
     if (archiveWorkflowFlag === true){
         yourAdiWillBeGeneratedNowAlert();
