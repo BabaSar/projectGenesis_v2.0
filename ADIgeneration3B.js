@@ -104,19 +104,6 @@ var thumbnailGenerator3B = function(){
     return processed;
 };
 
-// var string1 = string.replace(/@ProviderId@/g, providerId);
-// var string2 = string1.replace(/@UriId@/g, uriId);
-// var string3 = string2.replace(/@UriIdLastHalf@/g, uriIdLastHalf);
-// var string4 = string3.replace(/@contentRefId@/g, contentRefId);
-// var string5 = string4.replace(/@licenseStart@/g, licenseDatesObject.start);
-// var string6 = string5.replace(/@licenseEnd@/g, licenseDatesObject.end);
-// var string7 = string6.replace(/@offerStart@/g, offerDatesObject.start);
-// var string8 = string7.replace(/@offerEnd@/g, offerDatesObject.end);
-// var string9 = string8.replace(/@epgDateTime@/g, epgDateObject.epgDateTime);
-// var string10 = string9.replace(/@cutvServiceKey@/g, serviceKey);
-// var string11 = string10.replace(/@uriId2@/g, uriId2);
-// var string12 = string11.replace(/@uriId3@/g, uriId3);
-
 var contentGroupGenerator3B = function(){
 
     var contentGroup = '\t<ContentGroup uriId="@ProviderId@/CGVT@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
