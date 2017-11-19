@@ -177,6 +177,9 @@ var retrieveAllInputFieldValues = function(){
 
 //WHEN GENERATE ADI BUTTON IS CLICKED
 var generate = function(){
+
+    digitGenerator();//This initializes new random digits e.g uriId
+
     //Although this function is called once a change is detected if user selects an option from the offer type dropdown,
     //an alert is required if the first thing the user does is forget to choose an option and then presses generate.
     //Since it is likely that will happen, this function below is called here to cater for their being no offer type chosen.
