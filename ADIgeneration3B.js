@@ -103,3 +103,12 @@ var movieGenerator3B = function(){
         return processed;
 };
 
+
+var textAreaResultsGeneratorEst3bSingleTitle = function(){
+    var result = headerGenerator3B() +
+        titleGenerator3B() +
+        movieGenerator3B();
+
+    return result;
+};
+

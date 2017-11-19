@@ -212,16 +212,17 @@ var generate = function(){
 
     }else if (ipprWorkflowFlag === true){
         yourAdiWillBeGeneratedNowAlert();
-        resultsTextBox.value = textAreaResultsGeneratorIppr()
+        resultsTextBox.value = textAreaResultsGeneratorIppr();
 
     }else if (est3aSingleTitleWorkflowFlag === true){
         yourAdiWillBeGeneratedNowAlert();
-        resultsTextBox.value = textAreaResultsGeneratorEst3aSingleTitle()
+        resultsTextBox.value = textAreaResultsGeneratorEst3aSingleTitle();
 
     }else if (est3bSingleTitleWorkflowFlag === true){
         yourAdiWillBeGeneratedNowAlert();
         alert("Looks like you want a 3b est single title asset?");
-        //create a textAreaGenerator for est 3b single title
+        resultsTextBox.value = textAreaResultsGeneratorEst3bSingleTitle();
+
 
     }else if (noOfferTypeChosenYetFlag === true){
         alert("Please choose an offer type!");
