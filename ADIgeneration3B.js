@@ -124,7 +124,8 @@ var contentGroupGenerator3B = function(){
         '\t\t<offer:TitleRef uriId="est__sbo_hd/TITL@UriId@"/>\n' +
         '\t</ContentGroup>\n';
 
-    return contentGroup;
+    var processed = textProcessor(contentGroup);
+    return processed;
 };
 
 var extOpeningTag = function(){
@@ -182,10 +183,92 @@ var extPriceBundle3B = function(){
         '\t\t\t<PO:priceCategory currency="GBP" marketingSegment="VIP" price="12.01" territory="GBR"/>\n' +
         '\t\t\t<PO:priceCategory currency="EUR" marketingSegment="Standard" price="22.16" territory="IRL"/>\n' +
         '\t\t\t<PO:priceCategory currency="EUR" marketingSegment="VIP" price="22.17" territory="IRL"/>\n' +
-        '\t\t</ext:PriceBundle>';
+        '\t\t</ext:PriceBundle>\n';
 
     var processed = textProcessor(priceBundle);
     return processed;
+};
+
+var extPurchaseOption3B = function(){
+
+    var purchaseOption = '\t\t<ext:PurchaseOption uriId="@ProviderId@/@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t\t<PO:mediaType>1</PO:mediaType>\n' +
+        '\t\t\t<PO:mediaTypeFilter>4</PO:mediaTypeFilter>\n' +
+        '\t\t\t<PO:optionMetadata><![CDATA[{ "physicalReleaseDate":"00000000"}]]></PO:optionMetadata>\n' +
+        '\t\t\t<PO:defaultPriceBundleRef uriId="@ProviderId@/PRBU@UriId@"/>\n' +
+        '\t\t\t<PO:purchaseOptionAvailability>\n' +
+        '\t\t\t\t<PO:startDateTime>@offerStart@</PO:startDateTime>\n' +
+        '\t\t\t\t<PO:endDateTime>@offerEnd@</PO:endDateTime>\n' +
+        '\t\t\t</PO:purchaseOptionAvailability>\n' +
+        '\t\t</ext:PurchaseOption>\n' +
+        '\t\t<ext:PurchaseOption uriId="@ProviderId@/PROP@uriId2@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t\t<PO:mediaType>2</PO:mediaType>\n' +
+        '\t\t\t<PO:mediaTypeFilter>1</PO:mediaTypeFilter>\n' +
+        '\t\t\t<PO:optionMetadata><![CDATA[{ "physicalReleaseDate":"00000000"}]]></PO:optionMetadata>\n' +
+        '\t\t\t<PO:defaultPriceBundleRef uriId="@ProviderId@/PRBU@uriId2@"/>\n' +
+        '\t\t\t<PO:purchaseOptionAvailability>\n' +
+        '\t\t\t\t<PO:startDateTime>@offerStart@</PO:startDateTime>\n' +
+        '\t\t\t\t<PO:endDateTime>@offerEnd@</PO:endDateTime>\n' +
+        '\t\t\t</PO:purchaseOptionAvailability>\n' +
+        '\t\t</ext:PurchaseOption>\n' +
+        '\t\t<ext:PurchaseOption uriId="@ProviderId@/PROP@uriId3@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t\t<PO:mediaType>3</PO:mediaType>\n' +
+        '\t\t\t<PO:mediaTypeFilter>2</PO:mediaTypeFilter>\n' +
+        '\t\t\t<PO:optionMetadata><![CDATA[{ "physicalReleaseDate":"00000000"}]]></PO:optionMetadata>\n' +
+        '\t\t\t<PO:defaultPriceBundleRef uriId="@ProviderId@/PRBU@uriId3@"/>\n' +
+        '\t\t\t<PO:purchaseOptionAvailability>\n' +
+        '\t\t\t\t<PO:startDateTime>@offerStart@</PO:startDateTime>\n' +
+        '\t\t\t\t<PO:endDateTime>@offerEnd@</PO:endDateTime>\n' +
+        '\t\t\t</PO:purchaseOptionAvailability>\n' +
+        '\t\t</ext:PurchaseOption>\n';
+
+    var processed = textProcessor(purchaseOption);
+    return processed;
+};
+
+var extClosingTag = function(){
+    return '\t</Ext>\n';
+};
+
+var offer3B = function(){
+
+  var offer = '\t<Offer uriId="@ProviderId@/OAVT@UriId@"  internalVersionNum="0" providerVersionNum="0"  creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@">\n' +
+      '\t\t<core:Ext>\n' +
+      '\t\t\t<ext:OfferAvailability endDateTime="2017-11-22T12:59:59Z" offerType="IPPR" startDateTime="2017-11-05T13:00:00Z"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@UriId@"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId2@"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP2800000000000648"/>\n' +
+      '\t\t</core:Ext>\n' +
+      '\t\t<offer:ProviderContentTier>@ProviderId@</offer:ProviderContentTier>\n' +
+      '\t\t<offer:BillingId>DUMMY</offer:BillingId>\n' +
+      '\t\t<offer:TermsRef uriId="@ProviderId@/TAVT@UriId@"/>\n' +
+      '\t\t<offer:ContentGroupRef uriId="@ProviderId@/CGVT@UriId@"/>\n' +
+      '\t</Offer>\n' +
+      '\t<Offer uriId="est__sbo_hd/OAVT@uriId2@" internalVersionNum="0" providerVersionNum="0"  creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@">\n' +
+      '\t\t<core:Ext>\n' +
+      '\t\t\t<ext:OfferAvailability endDateTime="2017-12-02T12:59:59Z" offerType="IPPR" startDateTime="2017-11-23T13:00:00Z"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@UriId@"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId2@"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP2800000000000648"/>\n' +
+      '\t\t</core:Ext>\n' +
+      '\t\t<offer:ProviderContentTier>@ProviderId@</offer:ProviderContentTier>\n' +
+      '\t\t<offer:BillingId>DUMMY</offer:BillingId>\n' +
+      '\t\t<offer:TermsRef uriId="@ProviderId@/TAVT2800000000000647"/>\n' +
+      '\t\t<offer:ContentGroupRef uriId="@ProviderId@/CGVT@UriId@"/>\n' +
+      '\t</Offer>\n' +
+      '\t<Offer uriId="est__sbo_hd/OAVT@uriId3@" internalVersionNum="0" providerVersionNum="0"  creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@">\n' +
+      '\t\t<core:Ext>\n' +
+      '\t\t\t<ext:OfferAvailability endDateTime="2017-12-12T12:59:59Z" offerType="IPPR" startDateTime="2017-12-03T13:00:00Z"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@UriId@"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId2@"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId3@"/>\n' +
+      '\t\t\t<ext:optionMetadata><![CDATA[{ "digitalReleaseDate":"20171203"}]]></ext:optionMetadata>\n' +
+      '\t\t</core:Ext>\n' +
+      '\t\t<offer:ProviderContentTier>@ProviderId@</offer:ProviderContentTier>\n' +
+      '\t\t<offer:BillingId>DUMMY</offer:BillingId>\n' +
+      '\t\t<offer:TermsRef uriId="@ProviderId@/TAVT@uriId3@"/>\n' +
+      '\t\t<offer:ContentGroupRef uriId="@ProviderId@/CGVT@UriId@"/>\n' +
+      '\t</Offer>\n';
 };
 
 var textAreaResultsGeneratorEst3bSingleTitle = function(){
@@ -196,7 +279,10 @@ var textAreaResultsGeneratorEst3bSingleTitle = function(){
         contentGroupGenerator3B() +
         extOpeningTag() +
         extPressPackImage3B() +
-        extPriceBundle3B();
+        extPriceBundle3B() +
+        extPurchaseOption3B() +
+        extClosingTag() +
+        offer3B();
 
     return result;
 };
