@@ -10,18 +10,7 @@ var headerGenerator3B = function(){
     return header;
 };
 
-// var string1 = string.replace(/@ProviderId@/g, providerId);
-// var string2 = string1.replace(/@UriId@/g, uriId);
-// var string3 = string2.replace(/@UriIdLastHalf@/g, uriIdLastHalf);
-// var string4 = string3.replace(/@contentRefId@/g, contentRefId);
-// var string5 = string4.replace(/@licenseStart@/g, licenseDatesObject.start);
-// var string6 = string5.replace(/@licenseEnd@/g, licenseDatesObject.end);
-// var string7 = string6.replace(/@offerStart@/g, offerDatesObject.start);
-// var string8 = string7.replace(/@offerEnd@/g, offerDatesObject.end);
-// var string9 = string8.replace(/@epgDateTime@/g, epgDateObject.epgDateTime);
-// var string10 = string9.replace(/@cutvServiceKey@/g, serviceKey);
-// var string11 = string10.replace(/@uriId2@/g, uriId2);
-// var string12 = string11.replace(/@uriId3@/g, uriId3);
+
 
 var titleGenerator3B = function(){
     var title = '\t<Title uriId="@ProviderId@/TITL@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
@@ -105,7 +94,7 @@ var movieGenerator3B = function(){
 
 var thumbnailGenerator3B = function(){
 
-    var thumbnail = '\t<Thumbnail uriId="est__sbo_hd/THEP@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+    var thumbnail = '\t<Thumbnail uriId="@ProviderId@/THEP@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
         '\t\t<content:SourceUrl>tank/Images/ByPankaj/Twins_182x98.jpg</content:SourceUrl>\n' +
         '\t\t<content:ContentFileSize>100</content:ContentFileSize>\n' +
         '\t\t<content:ContentCheckSum>43178b156afa4f12859d17df7348b6cd</content:ContentCheckSum>\n' +
@@ -115,13 +104,115 @@ var thumbnailGenerator3B = function(){
     return processed;
 };
 
+// var string1 = string.replace(/@ProviderId@/g, providerId);
+// var string2 = string1.replace(/@UriId@/g, uriId);
+// var string3 = string2.replace(/@UriIdLastHalf@/g, uriIdLastHalf);
+// var string4 = string3.replace(/@contentRefId@/g, contentRefId);
+// var string5 = string4.replace(/@licenseStart@/g, licenseDatesObject.start);
+// var string6 = string5.replace(/@licenseEnd@/g, licenseDatesObject.end);
+// var string7 = string6.replace(/@offerStart@/g, offerDatesObject.start);
+// var string8 = string7.replace(/@offerEnd@/g, offerDatesObject.end);
+// var string9 = string8.replace(/@epgDateTime@/g, epgDateObject.epgDateTime);
+// var string10 = string9.replace(/@cutvServiceKey@/g, serviceKey);
+// var string11 = string10.replace(/@uriId2@/g, uriId2);
+// var string12 = string11.replace(/@uriId3@/g, uriId3);
+
+var contentGroupGenerator3B = function(){
+
+    var contentGroup = '\t<ContentGroup uriId="@ProviderId@/CGVT@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t<core:Ext>\n' +
+        '\t\t\t<ext:ContentGroupType>AV</ext:ContentGroupType>\n' +
+        '\t\t</core:Ext>\n' +
+        '\t\t<offer:TitleRef uriId="@ProviderId@/TITL@UriId@"/>\n' +
+        '\t\t<offer:MovieRef uriId="@ProviderId@/MAIN@UriId@"/>\n' +
+        '\t\t<offer:ThumbnailRef uriId="@ProviderId@/THEP@UriId@"/>\n' +
+        '\t\t<offer:ContentRef uriId="@ProviderId@/CGPP@UriId@"/>\n' +
+        '\t</ContentGroup>\n' +
+        '\t<ContentGroup uriId="@ProviderId@/CGPP@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t<core:Ext>\n' +
+        '\t\t\t<ext:PressPackImageRef uriId="@ProviderId@/PPAT@UriId@"/>\n' +
+        '\t\t\t<ext:PressPackImageRef uriId="@ProviderId@/PRSW@UriId@"/>\n' +
+        '\t\t\t<ext:PressPackImageRef uriId="@ProviderId@/PRSB@UriId@"/>\n' +
+        '\t\t</core:Ext>\n' +
+        '\t\t<offer:TitleRef uriId="est__sbo_hd/TITL@UriId@"/>\n' +
+        '\t</ContentGroup>\n';
+
+    return contentGroup;
+};
+
+var extOpeningTag = function(){
+    return '\t<Ext>\n';
+};
+
+var extPressPackImage3B = function(){
+
+    var extPressPackImage = '\t\t<ext:PressPackImage uriId="@ProviderId@/PPAT@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t\t<content:SourceUrl>tank/Images/ByPankaj/Twins_182x243.jpg</content:SourceUrl>\n' +
+        '\t\t\t<content:ContentFileSize>100</content:ContentFileSize>\n' +
+        '\t\t\t<content:ContentCheckSum>4a1623c0f37b90fbc2249ed4242747dc</content:ContentCheckSum>\n' +
+        '\t\t\t<content:X_Resolution>182</content:X_Resolution>\n' +
+        '\t\t\t<content:Y_Resolution>243</content:Y_Resolution>\n' +
+        '\t\t\t<ext:Usage>urn:nnds:Metro:metadata:MediaTypeCS:2007:2.6</ext:Usage>\n' +
+        '\t\t</ext:PressPackImage>\n' +
+        '\t\t<ext:PressPackImage uriId="@ProviderId@/PRSW@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t\t<content:SourceUrl>tank/Images/ByPankaj/Twins_262x349.jpg</content:SourceUrl>\n' +
+        '\t\t\t<content:ContentFileSize>100</content:ContentFileSize>\n' +
+        '\t\t\t<content:ContentCheckSum>142c646c38c060e3e466a2b0e5b46cd7</content:ContentCheckSum>\n' +
+        '\t\t\t<content:X_Resolution>262</content:X_Resolution>\n' +
+        '\t\t\t<content:Y_Resolution>349</content:Y_Resolution>\n' +
+        '\t\t\t<ext:Usage>urn:csco:vcs:metadata:MediaTypeCS:2015:stb:3-4</ext:Usage>\n' +
+        '\t\t</ext:PressPackImage>\n' +
+        '\t\t<ext:PressPackImage uriId="@ProviderId@/PRSB@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t\t<content:SourceUrl>tank/Images/ByPankaj/Twins_456x257.jpg</content:SourceUrl>\n' +
+        '\t\t\t<content:ContentFileSize>100</content:ContentFileSize>\n' +
+        '\t\t\t<content:ContentCheckSum>17af217040921f039e56a88b9c00548a</content:ContentCheckSum>\n' +
+        '\t\t\t<content:X_Resolution>456</content:X_Resolution>\n' +
+        '\t\t\t<content:Y_Resolution>257</content:Y_Resolution>\n' +
+        '\t\t\t<ext:Usage>urn:csco:vcs:metadata:MediaTypeCS:2015:stb:16-9</ext:Usage>\n' +
+        '\t\t</ext:PressPackImage>\n';
+
+        var processed = textProcessor(extPressPackImage);
+        return processed;
+
+};
+
+var extPriceBundle3B = function(){
+
+    var priceBundle = '\t\t<ext:PriceBundle  uriId="@ProviderId@/PRBU@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t\t<PO:priceCategory currency="GBP" marketingSegment="Standard" price="10.00" territory="GBR"/>\n' +
+        '\t\t\t<PO:priceCategory currency="GBP" marketingSegment="VIP" price="10.01" territory="GBR"/>\n' +
+        '\t\t\t<PO:priceCategory currency="EUR" marketingSegment="Standard" price="20.16" territory="IRL"/>\n' +
+        '\t\t\t<PO:priceCategory currency="EUR" marketingSegment="VIP" price="20.17" territory="IRL"/>\n' +
+        '\t\t</ext:PriceBundle>\n' +
+        '\t\t<ext:PriceBundle uriId="@ProviderId@/PRBU@uriId2@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t\t<PO:priceCategory currency="GBP" marketingSegment="Standard" price="11.00" territory="GBR"/>\n' +
+        '\t\t\t<PO:priceCategory currency="GBP" marketingSegment="VIP" price="11.01" territory="GBR"/>\n' +
+        '\t\t\t<PO:priceCategory currency="EUR" marketingSegment="Standard" price="21.16" territory="IRL"/>\n' +
+        '\t\t\t<PO:priceCategory currency="EUR" marketingSegment="VIP" price="21.17" territory="IRL"/>\n' +
+        '\t\t</ext:PriceBundle>\n' +
+        '\t\t<ext:PriceBundle uriId="@ProviderId@/PRBU@uriId3@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t\t<PO:priceCategory currency="GBP" marketingSegment="Standard" price="12.00" territory="GBR"/>\n' +
+        '\t\t\t<PO:priceCategory currency="GBP" marketingSegment="VIP" price="12.01" territory="GBR"/>\n' +
+        '\t\t\t<PO:priceCategory currency="EUR" marketingSegment="Standard" price="22.16" territory="IRL"/>\n' +
+        '\t\t\t<PO:priceCategory currency="EUR" marketingSegment="VIP" price="22.17" territory="IRL"/>\n' +
+        '\t\t</ext:PriceBundle>';
+
+    var processed = textProcessor(priceBundle);
+    return processed;
+};
 
 var textAreaResultsGeneratorEst3bSingleTitle = function(){
     var result = headerGenerator3B() +
         titleGenerator3B() +
         movieGenerator3B() +
-        thumbnailGenerator3B();
+        thumbnailGenerator3B() +
+        contentGroupGenerator3B() +
+        extOpeningTag() +
+        extPressPackImage3B() +
+        extPriceBundle3B();
 
     return result;
 };
+
+
 
