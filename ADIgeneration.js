@@ -318,3 +318,75 @@ var footerGenerator = function(){
 
     return footer;
 };
+
+// ----------- BELOW ARE THE ADI CHUNKS BEING STITCHED TOGETHER ------------ //
+
+
+var textAreaResultsGeneratorArchive = function(){
+    //alert("Hello from the textAreaResultsGeneratorArchive function");
+
+    var result = headerGenerator() +
+        contentGroupGenerator() +
+        titleGenerator() +
+        movieGenerator() +
+        previewGenerator() +
+        thumbnailGenerator() +
+        extPressPackGenerator() +
+        offerGenerator() +
+        termsGenerator() +
+        footerGenerator();
+
+        return result;
+};
+
+var textAreaResultsGeneratorCutv = function(){
+
+    //alert("Hello from the CUTV workflow i.e textAreaResultsGeneratorCutv function!");
+    //alert("The service key you inputted is: " + serviceKey);
+
+    var result = headerGenerator() +
+        contentGroupGenerator() +
+        titleGenerator() +
+        movieGenerator() +
+        previewGenerator() +
+        thumbnailGenerator() +
+        extPressPackGenerator() +
+        offerGeneratorCutv() +
+        termsGeneratorCutv() +
+        footerGenerator();
+
+    var textAreaOnClick = document.getElementById("textArea");
+    textAreaOnClick.value = result;
+};
+
+var textAreaResultsGeneratorIPPR = function(){
+    var result = headerGenerator() +
+        contentGroupGenerator() +
+        titleGenerator() +
+        movieGenerator() +
+        previewGenerator() +
+        thumbnailGenerator() +
+        extPressPackGenerator() +
+        offerGeneratorIPPR() +
+        termsGenerator() +
+        footerGenerator();
+
+    var textAreaOnClick = document.getElementById("textArea");
+    textAreaOnClick.value = result;
+};
+
+var textAreaResultsGeneratorEST = function(){
+    var result = headerGenerator() +
+        contentGroupGenerator() +
+        titleGenerator() +
+        movieGenerator() +
+        previewGenerator() +
+        thumbnailGenerator() +
+        extPressPackGenerator() +
+        offerGeneratorIPPR() + //EST offer is the same as an IPPR offer
+        termsGeneratorEST() +
+        footerGenerator();
+
+    var textAreaOnClick = document.getElementById("textArea");
+    textAreaOnClick.value = result;
+};

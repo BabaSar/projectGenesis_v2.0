@@ -4,6 +4,7 @@ var archiveWorkflowFlag = false;
 var cutvWorkflowFlag = false;
 var ipprWorkflowFlag = false;
 var est3aSingleTitleWorkflowFlag = false;
+var noOfferTypeChosenYetFlag = false;
 
 //function to set all flags to false. This is a quick way to set all to false again if there has been a change.
 var setAllOfferTypeFlagsToFalse = function(){
@@ -11,6 +12,7 @@ var setAllOfferTypeFlagsToFalse = function(){
     cutvWorkflowFlag = false;
     ipprWorkflowFlag = false;
     est3aSingleTitleWorkflowFlag = false;
+    noOfferTypeChosenYetFlag = false;
 };
 
 // A function to immediately get all input elements from the form - but first to declare the input field variables
@@ -113,6 +115,9 @@ var determineWhichOfferTypeSelected = function(){
         }else if(selected === "EST 3A Single Title"){
             setAllOfferTypeFlagsToFalse();
             est3aSingleTitleWorkflowFlag = true;
+        }else if(selected === "Choose..."){
+            setAllOfferTypeFlagsToFalse();
+            noOfferTypeChosenYetFlag = true;
         }
     }
 };
@@ -172,39 +177,40 @@ var retrieveAllInputFieldValues = function(){
 
 //WHEN GENERATE ADI BUTTON IS CLICKED
 var generate = function(){
-    alert("The generate ADI button was clicked!");
 
     //start collecting all the input field values and assign to variables
     retrieveAllInputFieldValues();
 
     //now set up license dates object using dateTimeFormatter()
     licenseDatesObject = dateTimeFormatter(licenseYear, licenseMonth, licenseDay, licenseDuration);
-
-
     offerDatesObject = dateTimeFormatter(offerYear, offerMonth, offerDay, offerDuration);
+    epgDateObject = epgDateTimeFormatter(epgYear, epgMonth, epgDay, epgHours, epgMinutes, epgSeconds);
+
 
     if (archiveWorkflowFlag === true){
-        resultsTextBox.value = "archive workflow called!";
+        yourAdiWillBeGeneratedNowAlert();
+        resultsTextBox.value = textAreaResultsGeneratorArchive();
 
     }else if (cutvWorkflowFlag === true){
-        //set up the epg date object using epgDateTimeFormatter(). This should only happen if user selected CUTV
-        epgDateObject = epgDateTimeFormatter(epgYear, epgMonth, epgDay, epgHours, epgMinutes, epgSeconds);
-
+        yourAdiWillBeGeneratedNowAlert();
         resultsTextBox.value = "CUTV workflow called!";
 
     }else if (ipprWorkflowFlag === true){
+        yourAdiWillBeGeneratedNowAlert();
         resultsTextBox.value = "IPPR workflow called!";
 
     }else if (est3aSingleTitleWorkflowFlag === true){
+        yourAdiWillBeGeneratedNowAlert();
         resultsTextBox.value = "EST 3A Single Title workflow called!";
 
+    }else if (noOfferTypeChosenYetFlag === true){
+        alert("Please choose an offer type!");
     }
 
 };
 
-//This is from dateTimeFormatter.js
-// var licenseDatesObject;
-// var offerDatesObject;
-// var epgDateObject;
+var yourAdiWillBeGeneratedNowAlert = function(){
+  alert("Your ADI will be generated now");
+};
 
 generateButton.addEventListener("click", generate);
