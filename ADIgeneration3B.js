@@ -103,11 +103,24 @@ var movieGenerator3B = function(){
         return processed;
 };
 
+var thumbnailGenerator3B = function(){
+
+    var thumbnail = '\t<Thumbnail uriId="est__sbo_hd/THEP@UriId@" internalVersionNum="0" providerVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@licenseStart@" endDateTime="@licenseEnd@">\n' +
+        '\t\t<content:SourceUrl>tank/Images/ByPankaj/Twins_182x98.jpg</content:SourceUrl>\n' +
+        '\t\t<content:ContentFileSize>100</content:ContentFileSize>\n' +
+        '\t\t<content:ContentCheckSum>43178b156afa4f12859d17df7348b6cd</content:ContentCheckSum>\n' +
+        '\t</Thumbnail>\n';
+
+    var processed = textProcessor(thumbnail);
+    return processed;
+};
+
 
 var textAreaResultsGeneratorEst3bSingleTitle = function(){
     var result = headerGenerator3B() +
         titleGenerator3B() +
-        movieGenerator3B();
+        movieGenerator3B() +
+        thumbnailGenerator3B();
 
     return result;
 };
