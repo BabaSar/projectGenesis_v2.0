@@ -78,6 +78,6 @@ function generateRandomEpgDateTime(){
     epgSecondsInput.value = Math.floor(Math.random()*60);
     //generates a random number between 0 and 60
 
-    //alert("you want random?");
+
 
 };
