@@ -1,3 +1,28 @@
+// --------- DIGIT GENERATION BELOW ------- //
+
+var uriId;
+var contentRefId;
+var uriIdLastHalf;
+
+//uriId and contentRefId are 16 digit numbers. The function below generates the unique 16 digits for each of these.
+//It also produces the uriIdLastHalf number, which is dervied from the uriId itself.
+//These values can now be used throughout the ADI where needed.
+
+var digitGenerator = function(){
+    //alert("getSixteenDigitGen called!");
+    //uriId = Math.floor(Math.random() * 9999999999999999 + 1000000000000000);
+    //contentRefId = Math.floor(Math.random() * 9999999999999999 + 1000000000000000);
+    uriId = Math.floor(Math.random() * (9999999999999999 - 1000000000000000) + 1000000000000000);
+    contentRefId = Math.floor(Math.random() * (9999999999999999 - 1000000000000000) + 1000000000000000);
+
+    var uriIdAsString = String(uriId);
+    uriIdLastHalf = uriIdAsString.substr(8); //This then uses the last half of the uriID; and gets used as part of the TitleMedium
+};
+
+// ------------------------ //
+
+// --------- TEXT PROCESSER FUNCTION BELOW ------- //
+
 var textProcessor = function(string){
     var string1 = string.replace(/@ProviderId@/g, providerId);
     var string2 = string1.replace(/@UriId@/g, uriId);
@@ -14,6 +39,10 @@ var textProcessor = function(string){
 
     return String(string10);
 };
+
+// ------------------------ //
+
+// --------- ADI BLOCKS GENERATION BELOW ------- //
 
 var headerGenerator = function(){
 
