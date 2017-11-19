@@ -1,4 +1,4 @@
-// --------- DIGIT GENERATION BELOW ------- //
+// --------- DIGITS GENERATION BELOW ------- //
 
 var uriId;
 var contentRefId;
@@ -8,15 +8,27 @@ var uriIdLastHalf;
 //It also produces the uriIdLastHalf number, which is dervied from the uriId itself.
 //These values can now be used throughout the ADI where needed.
 
-var digitGenerator = function(){
-    //alert("getSixteenDigitGen called!");
-    //uriId = Math.floor(Math.random() * 9999999999999999 + 1000000000000000);
-    //contentRefId = Math.floor(Math.random() * 9999999999999999 + 1000000000000000);
+var uriId2;
+var uriId3;
+
+//The purchase options numbers above are 3 unique numbers; we only need 3 unique numbers for a 3b single title
+//purchaseOptionOne is also used as the uriId for est3b single title.
+
+var digitsGenerator = function(){
+
+    // ---- Non 3b stuff ---- //
+
     uriId = Math.floor(Math.random() * (9999999999999999 - 1000000000000000) + 1000000000000000);
     contentRefId = Math.floor(Math.random() * (9999999999999999 - 1000000000000000) + 1000000000000000);
 
     var uriIdAsString = String(uriId);
     uriIdLastHalf = uriIdAsString.substr(8); //This then uses the last half of the uriID; and gets used as part of the TitleMedium
+
+    // ---- 3b stuff ------ //
+
+    uriId2 = uriId + 1;
+    uriId3 = uriId2 + 1;
+
 };
 
 // ------------------------ //
@@ -39,14 +51,18 @@ var textProcessor = function(string){
     var string9 = string8.replace(/@epgDateTime@/g, epgDateObject.epgDateTime);
     var string10 = string9.replace(/@cutvServiceKey@/g, serviceKey);
 
+    //for est3b
+    var string11 = string10.replace(/@uriId2@/g, uriId2);
+    var string12 = string11.replace(/@uriId3@/g, uriId3);
+
     //the '/g' option means look for global occurences and replace each occurence. If this was omitted, then it would only replace the first occurence.
 
-    return String(string10);
+    return String(string12);
 };
 
 // ------------------------ //
 
-// --------- ADI BLOCKS GENERATION BELOW ------- //
+// --------- ADI BLOCKS (NON 3B) GENERATION BELOW ------- //
 
 var headerGenerator = function(){
 
