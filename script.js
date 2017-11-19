@@ -177,6 +177,8 @@ var generate = function(){
     //start collecting all the input field values and assign to variables
     retrieveAllInputFieldValues();
 
+    //now set up all the dates using the dateTimeFormatter functions
+
 
 };
 
