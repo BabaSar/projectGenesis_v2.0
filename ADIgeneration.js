@@ -355,11 +355,10 @@ var textAreaResultsGeneratorCutv = function(){
         termsGeneratorCutv() +
         footerGenerator();
 
-    var textAreaOnClick = document.getElementById("textArea");
-    textAreaOnClick.value = result;
+    return result;
 };
 
-var textAreaResultsGeneratorIPPR = function(){
+var textAreaResultsGeneratorIppr = function(){
     var result = headerGenerator() +
         contentGroupGenerator() +
         titleGenerator() +
@@ -371,11 +370,10 @@ var textAreaResultsGeneratorIPPR = function(){
         termsGenerator() +
         footerGenerator();
 
-    var textAreaOnClick = document.getElementById("textArea");
-    textAreaOnClick.value = result;
+    return result;
 };
 
-var textAreaResultsGeneratorEST = function(){
+var textAreaResultsGeneratorEst3aSingleTitle = function(){
     var result = headerGenerator() +
         contentGroupGenerator() +
         titleGenerator() +
@@ -387,6 +385,5 @@ var textAreaResultsGeneratorEST = function(){
         termsGeneratorEST() +
         footerGenerator();
 
-    var textAreaOnClick = document.getElementById("textArea");
-    textAreaOnClick.value = result;
+    return result;
 };

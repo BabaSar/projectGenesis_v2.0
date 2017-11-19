@@ -177,6 +177,10 @@ var retrieveAllInputFieldValues = function(){
 
 //WHEN GENERATE ADI BUTTON IS CLICKED
 var generate = function(){
+    //Although this function is called once a change is detected if user selects an option from the offer type dropdown,
+    //an alert is required if the first thing the user does is forget to choose an option and then presses generate.
+    //Since it is likely that will happen, this function below is called here to cater for their being no offer type chosen.
+    determineWhichOfferTypeSelected();
 
     //start collecting all the input field values and assign to variables
     retrieveAllInputFieldValues();
@@ -193,15 +197,15 @@ var generate = function(){
 
     }else if (cutvWorkflowFlag === true){
         yourAdiWillBeGeneratedNowAlert();
-        resultsTextBox.value = "CUTV workflow called!";
+        resultsTextBox.value = textAreaResultsGeneratorCutv();
 
     }else if (ipprWorkflowFlag === true){
         yourAdiWillBeGeneratedNowAlert();
-        resultsTextBox.value = "IPPR workflow called!";
+        resultsTextBox.value = textAreaResultsGeneratorIppr()
 
     }else if (est3aSingleTitleWorkflowFlag === true){
         yourAdiWillBeGeneratedNowAlert();
-        resultsTextBox.value = "EST 3A Single Title workflow called!";
+        resultsTextBox.value = textAreaResultsGeneratorEst3aSingleTitle()
 
     }else if (noOfferTypeChosenYetFlag === true){
         alert("Please choose an offer type!");
