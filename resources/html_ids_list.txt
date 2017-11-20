@@ -1,0 +1,29 @@
+Basic ADI types	
+Name/Purpose of Input Field	- id
+Provider ID -	providerIdInput
+	
+License Start Year	- licenseYearInput
+License Start Month	- licenseMonthInput
+License Start Date	- licenseDayInput
+License Duration	- licenseDurationInput
+	
+Offer Start Year	- offerYearInput
+Offer Start Month	- offerMonthInput
+Offer Start Date	- offerDayInput
+Offer Duration	- offerDurationInput
+	
+Offer Type Dropdown	- offerDropDownInput
+	
+Service Key	- serviceKeyInput
+	
+EPG DateTime Year	- epgYearInput
+EPG DateTime Month	- epgMonthInput
+EPG DateTime Date	- epgDayInput
+EPG DateTime Hours	- epgHoursInput
+EPG DateTime Minutes	- epgMinutesInput
+EPG DateTime Seconds	- epgSecondsInput
+Randomize EPG DateTime Button	- randomizeEpgButton
+	
+Generate ADI Button	- generateButton
+
+Results textbox - resultsTextbox
