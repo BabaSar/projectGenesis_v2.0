@@ -273,6 +273,51 @@ var offer3B = function(){
       '\t</Offer>\n';
 };
 
+var terms3B = function(){
+
+    var terms = '\t<Terms uriId="@ProviderId@/TAVT@UriId@" internalVersionNum="0" providerVersionNum="0"  creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@">\n' +
+        '\t\t<core:Ext>\n' +
+        '\t\t\t<ext:TermType>EST</ext:TermType>\n' +
+        '\t\t\t<ext:platform>ES</ext:platform>\n' +
+        '\t\t\t<ext:TermExtensions>\n' +
+        '\t\t\t\t<ext:OrderType>PreOrder</ext:OrderType>\n' +
+        '\t\t\t</ext:TermExtensions>\n' +
+        '\t\t</core:Ext>\n' +
+        '\t\t<terms:SuggestedPrice>0</terms:SuggestedPrice>\n' +
+        '\t</Terms>\n' +
+        '\t<Terms uriId="@ProviderId@/TAVT@uriId2@" internalVersionNum="0" providerVersionNum="0"  creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@" >\n' +
+        '\t\t<core:Ext>\n' +
+        '\t\t\t<ext:TermType>EST</ext:TermType>\n' +
+        '\t\t\t<ext:platform>ES</ext:platform>\n' +
+        '\t\t\t<ext:TermExtensions>\n' +
+        '\t\t\t\t<ext:OrderType>ComingSoon</ext:OrderType>\n' +
+        '\t\t\t</ext:TermExtensions>\n' +
+        '\t\t</core:Ext>\n' +
+        '\t\t<terms:SuggestedPrice>0</terms:SuggestedPrice>\n' +
+        '\t</Terms>\n' +
+        '\t<Terms uriId="@ProviderId@/TAVT@uriId3@" internalVersionNum="0" providerVersionNum="0"  creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@" >\n' +
+        '\t\t<core:Ext>\n' +
+        '\t\t\t<ext:TermType>EST</ext:TermType>\n' +
+        '\t\t\t<ext:platform>ES</ext:platform>\n' +
+        '\t\t\t<ext:TermExtensions>\n' +
+        '\t\t\t\t<ext:OrderType>Regular</ext:OrderType>\n' +
+        '\t\t\t</ext:TermExtensions>\n' +
+        '\t\t</core:Ext>\n' +
+        '\t\t<terms:SuggestedPrice>0</terms:SuggestedPrice>\n' +
+        '\t\t</Terms>';
+
+    var processed = textProcessor(terms);
+    return processed;
+
+};
+
+var footer = function(){
+
+    var footer = '</ADI3>';
+
+    return footer;
+}
+
 var textAreaResultsGeneratorEst3bSingleTitle = function(){
     var result = headerGenerator3B() +
         titleGenerator3B() +
