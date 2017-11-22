@@ -239,7 +239,7 @@ var offer3B = function(){
       '\t\t\t<ext:OfferAvailability endDateTime="2017-11-22T12:59:59Z" offerType="IPPR" startDateTime="@offerStart@"/>\n' +
       '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@UriId@"/>\n' +
       '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId2@"/>\n' +
-      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP2800000000000648"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId3@"/>\n' +
       '\t\t</core:Ext>\n' +
       '\t\t<offer:ProviderContentTier>@ProviderId@</offer:ProviderContentTier>\n' +
       '\t\t<offer:BillingId>DUMMY</offer:BillingId>\n' +
@@ -251,7 +251,7 @@ var offer3B = function(){
       '\t\t\t<ext:OfferAvailability endDateTime="2017-12-02T12:59:59Z" offerType="IPPR" startDateTime="2@offerStart@"/>\n' +
       '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@UriId@"/>\n' +
       '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId2@"/>\n' +
-      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP2800000000000648"/>\n' +
+      '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId3@"/>\n' +
       '\t\t</core:Ext>\n' +
       '\t\t<offer:ProviderContentTier>@ProviderId@</offer:ProviderContentTier>\n' +
       '\t\t<offer:BillingId>DUMMY</offer:BillingId>\n' +
