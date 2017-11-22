@@ -248,7 +248,7 @@ var offer3B = function(){
       '\t</Offer>\n' +
       '\t<Offer uriId="est__sbo_hd/OAVT@uriId2@" internalVersionNum="0" providerVersionNum="0"  creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@">\n' +
       '\t\t<core:Ext>\n' +
-      '\t\t\t<ext:OfferAvailability endDateTime="2017-12-02T12:59:59Z" offerType="IPPR" startDateTime="2@offerStart@"/>\n' +
+      '\t\t\t<ext:OfferAvailability endDateTime="2017-12-02T12:59:59Z" offerType="IPPR" startDateTime="@offerStart@"/>\n' +
       '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@UriId@"/>\n' +
       '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId2@"/>\n' +
       '\t\t\t<ext:PurchaseOptionRef uriId="@ProviderId@/PROP@uriId3@"/>\n' +
