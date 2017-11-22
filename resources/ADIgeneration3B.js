@@ -255,7 +255,7 @@ var offer3B = function(){
       '\t\t</core:Ext>\n' +
       '\t\t<offer:ProviderContentTier>@ProviderId@</offer:ProviderContentTier>\n' +
       '\t\t<offer:BillingId>DUMMY</offer:BillingId>\n' +
-      '\t\t<offer:TermsRef uriId="@ProviderId@/TAVT2800000000000647"/>\n' +
+      '\t\t<offer:TermsRef uriId="@ProviderId@/TAVT@uriId2@"/>\n' +
       '\t\t<offer:ContentGroupRef uriId="@ProviderId@/CGVT@UriId@"/>\n' +
       '\t</Offer>\n' +
       '\t<Offer uriId="est__sbo_hd/OAVT@uriId3@" internalVersionNum="0" providerVersionNum="0"  creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@">\n' +
