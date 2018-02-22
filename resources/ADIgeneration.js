@@ -270,7 +270,7 @@ var offerGeneratorIPPR = function(){
 };
 
 var offerGeneratorCutv = function(){
-    var offer = '\t<Offer uriId="@ProviderId@/OAVT@UriId@" providerVersionNum="1" internalVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@">\n' +
+    var offer = '\t<Offer uriId="@ProviderId@/OAVT@UriId@" providerVersionNum="0" internalVersionNum="0" creationDateTime="@licenseStart@" startDateTime="@offerStart@" endDateTime="@offerEnd@">\n' +
         '\t\t<core:Ext>\n' +
         '\t\t\t<ext:CutvEvent epgDateTime="@epgDateTime@" leadServiceKey="@cutvServiceKey@">\n' +
         '\t\t\t\t<ext:Service serviceKey="@cutvServiceKey@" />\n' +
