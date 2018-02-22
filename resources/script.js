@@ -42,6 +42,9 @@ var epgHoursInput;
 var epgMinutesInput;
 var epgSecondsInput;
 var randomizeEpgButton;
+var licenseStartNow;
+var offerStartNow;
+
 
 var generateButton;
 generateButton = document.getElementById("generateButton");
@@ -78,7 +81,52 @@ var resultsTextBox;
 
     resultsTextBox = document.getElementById("resultsTextBox");
 
+    licenseStartNow = document.getElementById("licenseStartNow");
+    offerStartNow = document.getElementById("offerStartNow");
+
+
 })(); //This is an IIFE to get all field elements straight away.
+
+//Now set the duration for both offer and license to default to 30 days...
+licenseDurationInput.value = 30;
+offerDurationInput.value = 30;
+
+//When user clicks NOW for licenseStart...
+licenseStartNow.addEventListener('click', function(){
+   var dateToday = new Date().toLocaleString();
+
+   //get Year
+   var year = dateToday.substring(6,10);
+   licenseYearInput.value = year;
+
+   //getMonth
+    var month = dateToday.substring(3,5);
+    licenseMonthInput.value = month;
+
+    //getDay
+    var day = dateToday.substring(0,2);
+    licenseDayInput.value = day;
+
+});
+
+//When user clicks NOW for offerStart...
+offerStartNow.addEventListener('click', function(){
+    var dateToday = new Date().toLocaleString();
+
+    //get Year
+    var year = dateToday.substring(6,10);
+    offerYearInput.value = year;
+
+    //getMonth
+    var month = dateToday.substring(3,5);
+    offerMonthInput.value = month;
+
+    //getDay
+    var day = dateToday.substring(0,2);
+    offerDayInput.value = day;
+
+});
+
 
 //A function to determine which offer type is selected
 
