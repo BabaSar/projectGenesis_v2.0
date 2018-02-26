@@ -17,75 +17,35 @@ var setAllOfferTypeFlagsToFalse = function(){
     noOfferTypeChosenYetFlag = false;
 };
 
-// A function to immediately get all input elements from the form - but first to declare the input field variables
 
-var providerIdInput;
+const providerIdInput =  document.getElementById("providerIdInput");
 
-var licenseYearInput;
-var licenseMonthInput;
-var licenseDayInput;
-var licenseDurationInput;
+const licenseYearInput = document.getElementById("licenseYearInput");
+const licenseMonthInput = document.getElementById("licenseMonthInput");
+const licenseDayInput = document.getElementById("licenseDayInput");
+const licenseDurationInput = document.getElementById("licenseDurationInput");
 
-var offerYearInput;
-var offerMonthInput;
-var offerDayInput;
-var offerDurationInput;
+const offerYearInput = document.getElementById("offerYearInput");
+const offerMonthInput = document.getElementById("offerMonthInput");
+const offerDayInput = document.getElementById("offerDayInput");
+const offerDurationInput = document.getElementById("offerDurationInput");
 
-var offerDropDownInput;
+const offerDropDownInput = document.getElementById("offerDropDownInput");
 
-var serviceKeyInput;
+const serviceKeyInput = document.getElementById("serviceKeyInput");
 
-var epgYearInput;
-var epgMonthInput;
-var epgDayInput;
-var epgHoursInput;
-var epgMinutesInput;
-var epgSecondsInput;
-var randomizeEpgButton;
-var licenseStartNow;
-var offerStartNow;
+const epgYearInput = document.getElementById("epgYearInput");
+const epgMonthInput = document.getElementById("epgMonthInput");
+const epgDayInput = document.getElementById("epgDayInput");
+const epgHoursInput = document.getElementById("epgHoursInput");
+const epgMinutesInput = document.getElementById("epgMinutesInput");
+const epgSecondsInput = document.getElementById("epgSecondsInput");
+const randomizeEpgButton = document.getElementById("randomizeEpgButton");
+const licenseStartNow = document.getElementById("licenseStartNow");
+const offerStartNow = document.getElementById("offerStartNow");
+const generateButton = document.getElementById("generateButton");
+const resultsTextBox = document.getElementById("resultsTextBox");
 
-
-var generateButton;
-generateButton = document.getElementById("generateButton");
-
-var resultsTextBox;
-
-(function(){
-
-    providerIdInput = document.getElementById("providerIdInput");
-
-    licenseYearInput = document.getElementById("licenseYearInput");
-    licenseMonthInput = document.getElementById("licenseMonthInput");
-    licenseDayInput = document.getElementById("licenseDayInput");
-    licenseDurationInput = document.getElementById("licenseDurationInput");
-
-    offerYearInput = document.getElementById("offerYearInput");
-    offerMonthInput = document.getElementById("offerMonthInput");
-    offerDayInput = document.getElementById("offerDayInput");
-    offerDurationInput = document.getElementById("offerDurationInput");
-
-    offerDropDownInput = document.getElementById("offerDropDownInput");
-
-    serviceKeyInput = document.getElementById("serviceKeyInput");
-
-    epgYearInput = document.getElementById("epgYearInput");
-    epgMonthInput = document.getElementById("epgMonthInput");
-    epgDayInput = document.getElementById("epgDayInput");
-    epgHoursInput = document.getElementById("epgHoursInput");
-    epgMinutesInput = document.getElementById("epgMinutesInput");
-    epgSecondsInput = document.getElementById("epgSecondsInput");
-    randomizeEpgButton = document.getElementById("randomizeEpgButton");
-
-    generateButton = document.getElementById("generateButton");
-
-    resultsTextBox = document.getElementById("resultsTextBox");
-
-    licenseStartNow = document.getElementById("licenseStartNow");
-    offerStartNow = document.getElementById("offerStartNow");
-
-
-})(); //This is an Immediately Invoked Function Expression (IIFE) to get all field elements straight away.
 
 //Now set the duration for both offer and license to default to 30 days...
 licenseDurationInput.value = 30;
@@ -132,7 +92,7 @@ offerStartNow.addEventListener('click', function(){
 
 var determineWhichOfferTypeSelected = function(){
 
-    var offerDropDownInput = document.getElementById("offerDropDownInput");
+    const offerDropDownInput = document.getElementById("offerDropDownInput");
     var selected = offerDropDownInput.value;
 
     //An array of the epg related inputs to make it easy to loop through and disable/enable them depending on selection
@@ -201,8 +161,6 @@ var epgSeconds;
 
 var retrieveAllInputFieldValues = function(){
 
-
-    //do something here...
     providerId = providerIdInput.value;
 
     licenseYear = licenseYearInput.value;
@@ -270,9 +228,7 @@ var generate = function(){
 
     }else if (est3bSingleTitleWorkflowFlag === true){
         yourAdiWillBeGeneratedNowAlert();
-        alert("Looks like you want a 3b est single title asset?");
         resultsTextBox.value = textAreaResultsGeneratorEst3bSingleTitle();
-
 
     }else if (noOfferTypeChosenYetFlag === true){
         alert("Please choose an offer type!");
