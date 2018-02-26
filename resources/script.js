@@ -85,7 +85,7 @@ var resultsTextBox;
     offerStartNow = document.getElementById("offerStartNow");
 
 
-})(); //This is an IIFE to get all field elements straight away.
+})(); //This is an Immediately Invoked Function Expression (IIFE) to get all field elements straight away.
 
 //Now set the duration for both offer and license to default to 30 days...
 licenseDurationInput.value = 30;
